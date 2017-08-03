@@ -1,0 +1,21 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = '/root/Desktop/fcc-leaderboard/src/App.js';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _logo = require('./logo.svg');var _logo2 = _interopRequireDefault(_logo);
+require('./App.css');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+class App extends _react.Component {
+  render() {
+    return (
+      _react2.default.createElement('div', { className: 'App', __source: { fileName: _jsxFileName, lineNumber: 8 }, __self: this },
+        _react2.default.createElement('div', { className: 'App-header', __source: { fileName: _jsxFileName, lineNumber: 9 }, __self: this },
+          _react2.default.createElement('img', { src: _logo2.default, className: 'App-logo', alt: 'logo', __source: { fileName: _jsxFileName, lineNumber: 10 }, __self: this }),
+          _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 11 }, __self: this }, 'Welcome to React')),
+
+        _react2.default.createElement('p', { className: 'App-intro', __source: { fileName: _jsxFileName, lineNumber: 13 }, __self: this }, 'To get started, edit ',
+          _react2.default.createElement('code', { __source: { fileName: _jsxFileName, lineNumber: 14 }, __self: this }, 'src/App.js'), ' and save to reload.')));
+
+
+
+  }}exports.default =
+
+
+App;
