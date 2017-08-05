@@ -46,6 +46,11 @@
   background-color: white;
   box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.15);
   transition: all 0.5s ease; }
+  @media screen and (max-width: 705px) {
+    .board {
+      margin-right: 0px;
+      min-width: 0px;
+      width: 300px; } }
   .board:hover {
     box-shadow: 2px 4px 8px 0 rgba(46, 61, 73, 0.15); }
   .board .leader-image {
