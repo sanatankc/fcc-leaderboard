@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
+import ReactLoading from 'react-loading'
 
 
 class App extends Component {
@@ -60,7 +61,13 @@ class App extends Component {
           toggle = {toggle}
         />
         {isDataFetching
-          ? <p>Loading....</p>
+          ? <div className='loading-container'>
+              <ReactLoading 
+                type='cylon' 
+                color='#20b3e4'
+                width='80'
+                height= '64'/>
+            </div> 
           : <Leaderboard 
               leaderboard = {leaderboard}
               toggle = {toggle}
@@ -105,8 +112,10 @@ const Leaderboard = ({leaderboard, toggle}) =>
   <div className='LeaderBoard'>
     {leaderboard
       .map(({img, username, alltime, recent}, index) =>
-        <a href={`https://www.github.com/${username}`} target='_blank'>
-          <div className='board' key={index}>
+        <a href={`https://www.github.com/${username}`} 
+            target='_blank' 
+            key={index}>
+          <div className='board'>
             <div 
               className='leader-image'
               style = {{

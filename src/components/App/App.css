@@ -76,3 +76,9 @@
     letter-spacing: 4px;
     -webkit-margin-before: 0em;
     -webkit-margin-after: 0em; }
+
+.loading-container {
+  display: flex;
+  height: calc(100vh - 85px);
+  justify-content: center;
+  align-items: center; }
