@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import './App.css'
 import ReactLoading from 'react-loading'
-
+import GitHubForkRibbon from 'react-github-fork-ribbon'
+import Footer from '../Footer/Footer.js'
+import Toggle from '../Toggle/Toggle.js'
+import LeaderBoard from '../LeaderBoard/LeaderBoard.js'
 
 class App extends Component {
   constructor(props) {
@@ -68,89 +71,21 @@ class App extends Component {
                 width='80'
                 height= '64'/>
             </div> 
-          : <Leaderboard 
+          : <LeaderBoard 
               leaderboard = {leaderboard}
               toggle = {toggle}
             />
         }
+      <Footer />
+      <GitHubForkRibbon 
+        href="//www.github.com/sanatankumar/fcc-leaderboard"
+        target="_blank"
+        position="right">
+        View Code On Github
+      </GitHubForkRibbon>
       </div>
       )
   }
 }
 
-const Toggle = ({onToggleClick, toggle}) => {
-  const activeButtonStyle = {
-    backgroundColor: '#20b3e4',
-    color: 'white',
-  }
-  const InactiveButtonStyle = {
-    backgroundColor: 'transparent',
-    color: '#20b3e4',
-  }
-  const styleIfActive1 = (toggle === 0)
-    ? activeButtonStyle
-    : InactiveButtonStyle
-
-  const styleIfActive2 = (toggle === 1)
-    ? activeButtonStyle
-    : InactiveButtonStyle
-
-  return (
-    <div className='Toggle'>
-      <a
-        onClick = {onToggleClick}
-        data-value={0} 
-        style={styleIfActive1}>Last 30 days</a>
-      <a 
-        onClick = {onToggleClick}
-        data-value={1}
-        style={styleIfActive2}>All Time</a>
-    </div>
-  )
-}
-const Leaderboard = ({leaderboard, toggle}) =>
-  <div className='LeaderBoard'>
-    {leaderboard
-      .map(({img, username, alltime, recent}, index) =>
-        <LeaderCard
-          index = {index}
-          img = {img}
-          username = {username}
-          alltime = {alltime}
-          recent = {recent}
-          toggle = {toggle}
-        />
-    )}
-  </div>
-
-const LeaderCard = 
-  ({index, img, username, alltime, recent, toggle}) => 
-    <a href={`https://www.github.com/${username}`} 
-        target='_blank' 
-        key={index}>
-      <div className='board'>
-        <div 
-          className='leader-image'
-          style = {{
-            backgroundImage: `url(${img})`
-          }}>
-            <div className='image-overlay'></div>
-        </div>
-        <p className='username'>{index + 1}. {username}</p>
-        {toggle
-          ? <div>
-              <p className='label'>All time Scores</p>
-              <p className='scores'>{alltime}</p>
-              <p className='label'>Last 30 Days</p>
-              <p className='scores'>{recent}</p>
-            </div>
-          : <div>
-              <p className='label'>Last 30 Days</p>
-              <p className='scores'>{recent}</p>
-              <p className='label'>All time Scores</p>
-              <p className='scores'>{alltime}</p>
-            </div>
-        }
-      </div>
-    </a>
 export default App

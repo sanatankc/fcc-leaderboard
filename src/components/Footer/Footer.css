@@ -1,0 +1,15 @@
+footer {
+  background-color: #20b3e4;
+  color: white;
+  text-align: center;
+  padding: 20px; }
+  footer a {
+    color: white;
+    text-decoration: none; }
+    footer a:hover {
+      text-decoration: underline; }
+  footer img {
+    width: 25px;
+    height: auto;
+    position: relative;
+    top: 7px; }
