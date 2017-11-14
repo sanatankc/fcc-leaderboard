@@ -1,7 +1,7 @@
 {
   "name": "fcc-leaderboard",
   "version": "0.1.0",
-  "homepage": "https://sanatankumar.github.io/fcc-leaderboard",
+  "homepage": "https://sanatankc.github.io/fcc-leaderboard",
   "private": true,
   "dependencies": {
     "node-sass-chokidar": "0.0.3",
